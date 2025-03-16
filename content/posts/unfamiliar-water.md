@@ -1,0 +1,22 @@
+---
+title: Unfamiliar water
+date: 2021-07-12
+---
+
+When I arrived at Coach Stuart McDougal's [swim workshop](https://www.mindbodyandswim.com/workshops.html) yesterday, all thoughts about my family, parents and work ceased. The anxiety of my journey there left. The tethers of my life no longer suspended me. I felt an unnerving absence of familiarity of any sort. I didn't recognize myself. A nearly complete vacancy. I was reminded of nothing.
+
+And just like that, I was in the pool with the others. The water at the Corinthian Grand pool is thick and smooth. Comfortable. Cool and crisp. Like a clear gel or thick air. A shape shifting cushion which responds with perfect attentiveness to bodies gliding through it.
+
+While waiting with my head outside the pool before one drill, I experienced a brief flutter of fear from many decades past. It passed once I pushed off the wall under water into [superman](https://www.youtube.com/watch?v=JwV7aik6doM). I was cocooned in a new, already familiar, combination of sensations. My body was held perfectly and completely by the silky firm grasp of the blue pool, its water covered me fully.
+
+Coach Stu's instructions were matter of fact yesterday. Devoid of judgement. We weren't bad swimmers. We weren't riddled with flaws that needed fixing. We were simply human. And today we'd learn how to be fish.
+
+About four pool hours into the second day, close to its end, I remembered prior worries about getting tired during this long workshop. Checking in with my body, I compared this with how I actually felt in that moment. Where was the tiredness I had worried about? Had it been masked by the euphoria of accomplishment? Had I been ignoring my body? There was no distracting euphoria, my body reassured me. 
+
+I wasn't tired after all. At least not in ways I've experienced in the past. This must be the fruit of preparation. I'd eaten a light snack. I'd sipped on some water, but not enough to fuel distracting fantasies about peeing. My sunscreen, rash guard, goggles & cap worked together to create comfort from the San Jose sun. Comfort that cradles focus, like the chair I usually sit on to meditate. And I had decided to be flexible. To try to let small disappointments be. It also mattered that the exercises we did that day had been created with skillful consideration of our bodies and minds as they actually are. Stu took great care of us.
+
+This was all in stark contrast to the experience of the five year old at Windsor Manor in Bangalore. He was taught that it's normal to drown repeatedly in an icy cold pool. If your tiny sister can enjoy this, why can't you? Don't answer that. 
+
+Instead, guided by Stu and recent years of therapy, this forty year old learned to gently reassure the five year old. When the cold water constricted our chest, the forty year old soothed the five year old back to the present–*We can leave the pool any time you want to. Our feet reach the floor. It's okay to stop, stand and take a breath. You are safe. I'm right here by your side. Of course you're scared right now. It's okay to scream. But you won't need to, I'm listening that carefully. I hear you. I see you. What you're feeling is real, natural and matters. You matter. You're growing. And growing is hard for everyone. You're not alone. I won't leave*–And then the five year old's breath steadied. His muscles relaxed. The corners of his lips rose. He wasn't five anymore. He wasn't forty either. He started to play. To experiment. To notice these new sensations. To revel in pockets of nascent joy. They heal together, caring for one and other, playing & growing. They were, he was, I am–simply–here.
+
+I wonder if all this might be similar to the moments after we're born. When we're nearer to being blank. Before any obligation or responsibility. Untainted by misguided instruction about what we should do and can't do. When there's still a connection to raw sensation without concepts to slice and dice them. An unfamiliarity. An "awkwardness" that Stu says is a sign of growth. While making adjustments to our strokes, he said if it feels natural we're not yet learning. He encouraged us to seek out that uncomfortable sense of awkwardness. Like fragile proto-steps of an eight month old feeling the floor with fresh soles. With a little encouragement & guidance we'll be on our way to walking, running, and swimming, discovering our vast world. For today we've just begun.
