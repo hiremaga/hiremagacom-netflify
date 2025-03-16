@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node scripts/generate-rss.js",
+    "build": "next build && node scripts/generate-rss.js && node scripts/generate-redirects.js",
     "start": "next start",
     "rss": "node scripts/generate-rss.js",
+    "redirects": "node scripts/generate-redirects.js",
     "newsletter": "node scripts/publish-to-buttondown.js",
     "newsletter:post": "node scripts/publish-to-buttondown.js"
   },

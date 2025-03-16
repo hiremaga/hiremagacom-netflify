@@ -10,6 +10,7 @@ This is the personal blog for Abhi Hiremagalur, deployed at hiremaga.com via Net
 - Fast page loads
 - RSS feed support
 - ButtonDown newsletter integration
+- Legacy URL redirects (maintains old links)
 - Easy to maintain and update
 
 ## Development
@@ -85,6 +86,20 @@ npm run newsletter:post your-post-id
 
 The post ID is the filename without the `.md` extension.
 
+## URL Structure and Redirects
+
+This blog uses the following URL structure:
+
+- Blog home: `/`
+- Individual posts: `/posts/[post-id]`
+
+For backward compatibility with the old blog structure (where posts were at the root level), redirects are automatically generated to forward old URLs to the new structure. For example:
+
+- Old URL: `https://hiremaga.com/post-title`
+- New URL: `https://hiremaga.com/posts/post-title`
+
+Redirects are generated during the build process based on the markdown files in the `content/posts` directory.
+
 ## Technologies Used
 
 - Next.js
@@ -94,4 +109,4 @@ The post ID is the filename without the `.md` extension.
 - Markdown (processed with remark)
 - RSS feed generation
 - ButtonDown newsletter integration
-- Netlify for hosting and deployment
+- Netlify for hosting and deployment with automatic redirects
