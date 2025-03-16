@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Abhi Hiremagalur | Blog]]></title>
+        <description><![CDATA[Articles and thoughts from Abhi Hiremagalur]]></description>
+        <link>https://hiremaga.com</link>
+        <image>
+            <url>https://hiremaga.com/logo.png</url>
+            <title>Abhi Hiremagalur | Blog</title>
+            <link>https://hiremaga.com</link>
+        </image>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Sun, 16 Mar 2025 20:24:54 GMT</lastBuildDate>
+        <atom:link href="https://hiremaga.com/rss.xml" rel="self" type="application/rss+xml"/>
+        <pubDate>Sun, 16 Mar 2025 20:24:54 GMT</pubDate>
+        <copyright><![CDATA[2025 Abhi Hiremagalur]]></copyright>
+        <item>
+            <title><![CDATA[More vibrant Go in 3 moves]]></title>
+            <description><![CDATA[
+# Move 1: Describe interactions with roles
+
+[Go's](http://golang.org/) interfaces are [satisfied implicitly](http://nathany.com/good/#toc_8), making it incredibly easy to create [role interfaces](http://martinfowler.com/bliki/RoleInterface.html).
+
+Describing new roles as we implement a method lets ...]]></description>
+            <link>https://hiremaga.com/posts/3-moves</link>
+            <guid isPermaLink="true">https://hiremaga.com/posts/3-moves</guid>
+            <pubDate>Sat, 25 Jan 2014 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Design partnerships not job descriptions]]></title>
+            <description><![CDATA[
+When designing organizations much effort can be put into defining individual roles. It's important to clearly spell out each individual's responsibilities. Or so goes a type of [conventional wisdom](https://www.google.com/search?q=job+description). In fact, this idea misses the reality of collabora...]]></description>
+            <link>https://hiremaga.com/posts/design-partnerships-not-job-descriptions</link>
+            <guid isPermaLink="true">https://hiremaga.com/posts/design-partnerships-not-job-descriptions</guid>
+            <pubDate>Sun, 24 Oct 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The paradox of empathy]]></title>
+            <description><![CDATA[
+Understanding the needs of another person is immensely helpful in tuning our behavior to them, and in predicting or even influencing their behavior around us. Practicing being attentive to the small cues they provide, through their choice of words and other expressions, can help us relate to their ...]]></description>
+            <link>https://hiremaga.com/posts/paradox-of-empathy</link>
+            <guid isPermaLink="true">https://hiremaga.com/posts/paradox-of-empathy</guid>
+            <pubDate>Sat, 04 Feb 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Process is for people]]></title>
+            <description><![CDATA[
+This week a few colleagues and I, software engineers and managers at [VMware Tanzu](https://tanzu.vmware.com/), attended the third installment of [LeadDev Together](https://leaddev.com/course/together). This deep-dive was about defining, refining, and aligning processes. We heard from several accom...]]></description>
+            <link>https://hiremaga.com/posts/process-is-for-people</link>
+            <guid isPermaLink="true">https://hiremaga.com/posts/process-is-for-people</guid>
+            <pubDate>Thu, 01 Oct 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Unfamiliar water]]></title>
+            <description><![CDATA[
+When I arrived at Coach Stuart McDougal's [swim workshop](https://www.mindbodyandswim.com/workshops.html) yesterday, all thoughts about my family, parents and work ceased. The anxiety of my journey there left. The tethers of my life no longer suspended me. I felt an unnerving absence of familiarity...]]></description>
+            <link>https://hiremaga.com/posts/unfamiliar-water</link>
+            <guid isPermaLink="true">https://hiremaga.com/posts/unfamiliar-water</guid>
+            <pubDate>Mon, 12 Jul 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[To reduce the cost of change, compose don't inherit]]></title>
+            <description><![CDATA[
+What follows is a note to some of my colleagues in early 2014, as we transitioned from writing mainly Ruby to writing Go. Published belatedly in 2021.
+
+---
+
+When changing one part of a codebase, we must account for the other parts know about it. For instance, in renaming a method, we must consider ...]]></description>
+            <link>https://hiremaga.com/posts/why-i-prefer-composition-over-inheritance</link>
+            <guid isPermaLink="true">https://hiremaga.com/posts/why-i-prefer-composition-over-inheritance</guid>
+            <pubDate>Sun, 26 Jan 2014 00:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>

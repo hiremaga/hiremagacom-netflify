@@ -47,7 +47,8 @@ export function getSortedPostsData() {
           title,
           date
         };
-      } catch (e) {
+      } catch (error) {
+        const e = error as Error;
         console.error(`Error parsing frontmatter in ${fileName}:`, e);
         return {
           id,
@@ -108,11 +109,12 @@ export async function getPostData(id: string) {
       title,
       date
     };
-  } catch (e) {
+  } catch (error) {
+    const e = error as Error;
     console.error(`Error parsing frontmatter in ${id}.md:`, e);
     return {
       id,
-      contentHtml: `<p>Error loading content: ${e.message}</p>`,
+      contentHtml: `<p>Error loading content: ${e.message || 'Unknown error'}</p>`,
       title: 'Error in frontmatter',
       date: '1970-01-01',
     };
