@@ -16,19 +16,46 @@ export default function Layout({
     setEmail(e.target.value);
   };
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubscribeStatus('loading');
     
-    // Redirect to ButtonDown subscribe page
-    window.open(`https://buttondown.email/hiremaga?email=${encodeURIComponent(email)}`, '_blank');
-    setSubscribeStatus('success');
-    setEmail('');
-    
-    // Reset status after 3 seconds
-    setTimeout(() => {
-      setSubscribeStatus('idle');
-    }, 3000);
+    try {
+      // Submit to ButtonDown API directly using their embed form endpoint
+      const response = await fetch(
+        'https://buttondown.email/api/emails/embed-subscribe/hiremaga',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email }),
+        }
+      );
+      
+      if (response.ok) {
+        setSubscribeStatus('success');
+        setEmail('');
+        
+        // Reset status after 3 seconds
+        setTimeout(() => {
+          setSubscribeStatus('idle');
+        }, 3000);
+      } else {
+        setSubscribeStatus('error');
+        // Reset status after 3 seconds
+        setTimeout(() => {
+          setSubscribeStatus('idle');
+        }, 3000);
+      }
+    } catch (error) {
+      console.error('Subscription error:', error);
+      setSubscribeStatus('error');
+      // Reset status after 3 seconds
+      setTimeout(() => {
+        setSubscribeStatus('idle');
+      }, 3000);
+    }
   };
 
   return (
@@ -73,12 +100,19 @@ export default function Layout({
       )}
 
       <div className="mt-16 py-6 border-t border-b">
-        <form onSubmit={handleSubscribe} className="flex flex-col items-center">
+        <form 
+          action="https://buttondown.email/api/emails/embed-subscribe/hiremaga"
+          method="post"
+          onSubmit={handleSubscribe} 
+          className="flex flex-col items-center"
+          data-buttondown-form
+        >
           <h3 className="text-xl font-medium mb-2">Subscribe to my newsletter</h3>
           <p className="text-gray-600 text-center mb-4">Get new posts delivered straight to your inbox.</p>
           <div className="flex w-full max-w-md">
             <input 
               type="email" 
+              name="email"
               value={email}
               onChange={handleEmailChange}
               required
@@ -93,12 +127,31 @@ export default function Layout({
               {subscribeStatus === 'loading' ? 'Subscribing...' : 'Subscribe'}
             </button>
           </div>
+          {/* Hidden fields for Buttondown */}
+          <input type="hidden" name="tag" value="website-signup" />
+          <input type="hidden" name="embed" value="true" />
+          <input type="hidden" name="referrer" value="website" />
+          
           {subscribeStatus === 'success' && (
-            <p className="text-green-600 mt-2">Thanks for subscribing!</p>
+            <p className="text-green-600 mt-2">Thanks for subscribing! Please check your inbox to confirm.</p>
           )}
           {subscribeStatus === 'error' && (
-            <p className="text-red-600 mt-2">Something went wrong. Please try again.</p>
+            <p className="text-red-600 mt-2">
+              There was an issue with your subscription. You might already be subscribed, 
+              or please try again later.
+            </p>
           )}
+          
+          <div className="text-xs text-gray-500 mt-2">
+            <a 
+              href="https://buttondown.email/refer/hiremaga" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="underline hover:text-gray-700"
+            >
+              Powered by Buttondown
+            </a>
+          </div>
         </form>
       </div>
 
