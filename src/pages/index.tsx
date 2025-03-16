@@ -31,10 +31,9 @@ export default function Home({
         <title>Abhi Hiremagalur</title>
       </Head>
       <section className="text-xl py-px-4">
-        <p>Hello, I'm <strong>Abhi Hiremagalur</strong>. Welcome to my personal blog.</p>
+        <p>Hello, I'm <strong>Abhi Hiremagalur</strong>. This is my public journal.</p>
       </section>
       <section className="py-5">
-        <h2 className="text-2xl font-bold mb-4">Blog</h2>
         <ul className="space-y-4">
           {allPostsData.map(({ id, date, title }) => (
             <li key={id} className="border-b pb-2">
