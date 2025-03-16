@@ -93,12 +93,12 @@ This blog uses the following URL structure:
 - Blog home: `/`
 - Individual posts: `/posts/[post-id]`
 
-For backward compatibility with the old blog structure (where posts were at the root level), redirects are automatically generated to forward old URLs to the new structure. For example:
+For backward compatibility with the old blog structure (where posts were at the root level), Netlify redirects are configured to forward legacy URLs to the new structure. For example:
 
 - Old URL: `https://hiremaga.com/post-title`
 - New URL: `https://hiremaga.com/posts/post-title`
 
-Redirects are generated during the build process based on the markdown files in the `content/posts` directory.
+The redirects are defined in the static `public/_redirects` file which Netlify automatically uses during deployment.
 
 ## Technologies Used
 
