@@ -1,6 +1,6 @@
 ---
 title: The Art of the Pit Stop - What Software Teams Can Learn from Racing
-date: 2023-09-01
+date: 2025-02-22
 ---
 
 > TL;DR: Like racing teams making strategic pit stops, software teams must master the art of planned technical investments. Success comes from timing them well, having clear purposes, and executing with full team alignment.

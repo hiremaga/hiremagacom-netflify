@@ -1,6 +1,6 @@
 ---
 title: Letting Go & Finding Flow - My Journey Through Rhythm
-date: 2023-06-01
+date: 2024-09-07
 ---
 
 There’s a moment in the water, right after my first few strokes, when everything clicks. I stop thinking about the rest of the day. My body finds its rhythm, my mind lets go, and I just swim. In that moment, I feel what Mihaly Csikszentmihalyi calls flow—that deep sense of immersion where everything feels right. But the truth is, it took a long time to find that rhythm, both in the pool and in my life. And I’ve learned that it’s not about finding the right routine, but about creating the conditions for something more sustainable— something more alive.
