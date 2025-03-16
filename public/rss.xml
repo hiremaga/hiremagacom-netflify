@@ -9,9 +9,9 @@
             <link>https://hiremaga.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 16 Mar 2025 20:24:54 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 16 Mar 2025 22:09:35 GMT</lastBuildDate>
         <atom:link href="https://hiremaga.com/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sun, 16 Mar 2025 20:24:54 GMT</pubDate>
+        <pubDate>Sun, 16 Mar 2025 22:09:35 GMT</pubDate>
         <copyright><![CDATA[2025 Abhi Hiremagalur]]></copyright>
         <item>
             <title><![CDATA[More vibrant Go in 3 moves]]></title>
@@ -26,12 +26,29 @@ Describing new roles as we implement a method lets ...]]></description>
             <pubDate>Sat, 25 Jan 2014 00:00:00 GMT</pubDate>
         </item>
         <item>
+            <title><![CDATA[The Art of the Pit Stop - What Software Teams Can Learn from Racing]]></title>
+            <description><![CDATA[
+> TL;DR: Like racing teams making strategic pit stops, software teams must master the art of planned technical investments. Success comes from timing them well, having clear purposes, and executing with full team alignment.
+Every weekend during racing season, teams of engineers and mechanics make s...]]></description>
+            <link>https://hiremaga.com/posts/art-of-the-pit-stop</link>
+            <guid isPermaLink="true">https://hiremaga.com/posts/art-of-the-pit-stop</guid>
+            <pubDate>Sat, 22 Feb 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
             <title><![CDATA[Design partnerships not job descriptions]]></title>
             <description><![CDATA[
 When designing organizations much effort can be put into defining individual roles. It's important to clearly spell out each individual's responsibilities. Or so goes a type of [conventional wisdom](https://www.google.com/search?q=job+description). In fact, this idea misses the reality of collabora...]]></description>
             <link>https://hiremaga.com/posts/design-partnerships-not-job-descriptions</link>
             <guid isPermaLink="true">https://hiremaga.com/posts/design-partnerships-not-job-descriptions</guid>
             <pubDate>Sun, 24 Oct 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Letting Go & Finding Flow - My Journey Through Rhythm]]></title>
+            <description><![CDATA[
+There’s a moment in the water, right after my first few strokes, when everything clicks. I stop thinking about the rest of the day. My body finds its rhythm, my mind lets go, and I just swim. In that moment, I feel what Mihaly Csikszentmihalyi calls flow—that deep sense of immersion where everythin...]]></description>
+            <link>https://hiremaga.com/posts/letting-go-finding-flow</link>
+            <guid isPermaLink="true">https://hiremaga.com/posts/letting-go-finding-flow</guid>
+            <pubDate>Sat, 07 Sep 2024 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[The paradox of empathy]]></title>

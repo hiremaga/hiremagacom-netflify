@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { useState } from 'react';
 
 export default function Layout({ 
   children, 
@@ -9,54 +8,6 @@ export default function Layout({
   children: React.ReactNode, 
   home?: boolean 
 }) {
-  const [email, setEmail] = useState('');
-  const [subscribeStatus, setSubscribeStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
-  };
-
-  const handleSubscribe = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubscribeStatus('loading');
-    
-    try {
-      // Submit to ButtonDown API directly using their embed form endpoint
-      const response = await fetch(
-        'https://buttondown.email/api/emails/embed-subscribe/hiremaga',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ email }),
-        }
-      );
-      
-      if (response.ok) {
-        setSubscribeStatus('success');
-        setEmail('');
-        
-        // Reset status after 3 seconds
-        setTimeout(() => {
-          setSubscribeStatus('idle');
-        }, 3000);
-      } else {
-        setSubscribeStatus('error');
-        // Reset status after 3 seconds
-        setTimeout(() => {
-          setSubscribeStatus('idle');
-        }, 3000);
-      }
-    } catch (error) {
-      console.error('Subscription error:', error);
-      setSubscribeStatus('error');
-      // Reset status after 3 seconds
-      setTimeout(() => {
-        setSubscribeStatus('idle');
-      }, 3000);
-    }
-  };
 
   return (
     <div className="max-w-2xl mx-auto px-4 py-8">
@@ -103,55 +54,48 @@ export default function Layout({
         <form 
           action="https://buttondown.email/api/emails/embed-subscribe/hiremaga"
           method="post"
-          onSubmit={handleSubscribe} 
-          className="flex flex-col items-center"
-          data-buttondown-form
+          className="flex flex-col items-center embeddable-buttondown-form"
+          onSubmit={() => {
+            const btn = document.getElementById('subscribe-btn') as HTMLInputElement;
+            if (btn) {
+              btn.value = 'Subscribing...';
+              btn.disabled = true;
+              btn.classList.add('opacity-75');
+            }
+            return true;
+          }}
         >
           <h3 className="text-xl font-medium mb-2">Subscribe to my newsletter</h3>
           <p className="text-gray-600 text-center mb-4">Get new posts delivered straight to your inbox.</p>
+          
           <div className="flex w-full max-w-md">
             <input 
               type="email" 
               name="email"
-              value={email}
-              onChange={handleEmailChange}
               required
               placeholder="your@email.com" 
               className="flex-grow px-4 py-2 border rounded-l focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
-            <button 
+            <input 
+              id="subscribe-btn"
               type="submit" 
-              disabled={subscribeStatus === 'loading'}
-              className={`px-4 py-2 bg-blue-600 text-white rounded-r hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 ${subscribeStatus === 'loading' ? 'opacity-75' : ''}`}
-            >
-              {subscribeStatus === 'loading' ? 'Subscribing...' : 'Subscribe'}
-            </button>
+              value="Subscribe"
+              className="px-4 py-2 bg-blue-600 text-white rounded-r hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
           </div>
-          {/* Hidden fields for Buttondown */}
-          <input type="hidden" name="tag" value="website-signup" />
-          <input type="hidden" name="embed" value="true" />
-          <input type="hidden" name="referrer" value="website" />
           
-          {subscribeStatus === 'success' && (
-            <p className="text-green-600 mt-2">Thanks for subscribing! Please check your inbox to confirm.</p>
-          )}
-          {subscribeStatus === 'error' && (
-            <p className="text-red-600 mt-2">
-              There was an issue with your subscription. You might already be subscribed, 
-              or please try again later.
-            </p>
-          )}
+          <input type="hidden" name="embed" value="1" />
           
-          <div className="text-xs text-gray-500 mt-2">
+          <p className="text-xs text-gray-500 mt-2">
             <a 
-              href="https://buttondown.email/refer/hiremaga" 
+              href="https://buttondown.email" 
               target="_blank" 
               rel="noopener noreferrer"
               className="underline hover:text-gray-700"
             >
               Powered by Buttondown
             </a>
-          </div>
+          </p>
         </form>
       </div>
 
