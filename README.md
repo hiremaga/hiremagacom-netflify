@@ -8,6 +8,8 @@ This is the personal blog for Abhi Hiremagalur, deployed at hiremaga.com via Net
 - Content written in Markdown
 - Minimalist design with Tailwind CSS
 - Fast page loads
+- RSS feed support
+- ButtonDown newsletter integration
 - Easy to maintain and update
 
 ## Development
@@ -54,6 +56,35 @@ To manually deploy:
 2. Netlify will automatically detect the changes and deploy the site
 3. Check the deployment status on your Netlify dashboard
 
+## Newsletter Integration
+
+The blog includes integration with ButtonDown for newsletter publishing. To set it up:
+
+1. Sign up for a [ButtonDown account](https://buttondown.email/)
+2. Get your API key from the ButtonDown dashboard
+3. Create a `.env` file in the root directory (based on `.env.example`)
+4. Add your ButtonDown API key:
+
+```env
+BUTTONDOWN_API_KEY=your_api_key_here
+```
+
+### Publishing to Newsletter
+
+To publish the most recent post to ButtonDown:
+
+```bash
+npm run newsletter
+```
+
+To publish a specific post by ID:
+
+```bash
+npm run newsletter:post your-post-id
+```
+
+The post ID is the filename without the `.md` extension.
+
 ## Technologies Used
 
 - Next.js
@@ -61,4 +92,6 @@ To manually deploy:
 - TypeScript
 - Tailwind CSS
 - Markdown (processed with remark)
+- RSS feed generation
+- ButtonDown newsletter integration
 - Netlify for hosting and deployment
