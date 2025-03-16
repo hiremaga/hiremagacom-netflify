@@ -12,6 +12,7 @@ export default function Layout({
     <div className="max-w-2xl mx-auto px-4 py-8">
       <Head>
         <link rel="icon" href="/favicon.ico" />
+        <link rel="alternate" type="application/rss+xml" title="RSS Feed for Abhi Hiremagalur's Blog" href="/rss.xml" />
         <meta
           name="description"
           content="Abhi Hiremagalur's personal blog"
@@ -30,7 +31,12 @@ export default function Layout({
         </div>
       )}
       <footer className="mt-16 pt-6 border-t text-center text-gray-500">
-        <p>© {new Date().getFullYear()} Abhi Hiremagalur</p>
+        <p className="mb-2">© {new Date().getFullYear()} Abhi Hiremagalur</p>
+        <p>
+          <a href="/rss.xml" className="text-blue-600 hover:underline">
+            RSS Feed
+          </a>
+        </p>
       </footer>
     </div>
   );
