@@ -32,17 +32,36 @@ export default function Post({ postData }: { postData: PostData }) {
   return (
     <Layout>
       <Head>
-        <title>{postData.title}</title>
+        <title>{postData.title} | Abhi Hiremagalur</title>
+        <meta name="description" content={`${postData.title} - An article by Abhi Hiremagalur`} />
+        <meta property="og:title" content={`${postData.title} | Abhi Hiremagalur`} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://hiremaga.com/posts/${postData.id}`} />
       </Head>
-      <article>
-        <h1 className="text-3xl font-bold">{postData.title}</h1>
-        <div className="text-gray-500 mb-6">
-          <Date dateString={postData.date} />
-        </div>
+      <article className="max-w-prose mx-auto">
+        <header className="mb-8">
+          <h1 className="text-3xl sm:text-4xl font-bold mb-3">{postData.title}</h1>
+          <div className="text-gray-500">
+            <Date dateString={postData.date} />
+          </div>
+        </header>
         <div 
-          className="prose max-w-none"
+          className="prose prose-lg prose-blue max-w-none"
           dangerouslySetInnerHTML={{ __html: postData.contentHtml }} 
         />
+        <div className="mt-12 pt-6 border-t text-gray-500">
+          <p>
+            Thanks for reading! Want to discuss this post? 
+            <a 
+              href={`https://bsky.app/profile/hiremaga.com`} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="ml-1 text-blue-600 hover:underline"
+            >
+              Find me on Bluesky
+            </a>.
+          </p>
+        </div>
       </article>
     </Layout>
   );

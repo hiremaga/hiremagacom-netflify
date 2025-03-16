@@ -30,23 +30,25 @@ export default function Home({
       <Head>
         <title>Abhi Hiremagalur</title>
       </Head>
-      <section className="text-xl py-px-4">
-        <p>Hello, I'm <strong>Abhi Hiremagalur</strong>. This is my public journal.</p>
-      </section>
-      <section className="py-5">
-        <ul className="space-y-4">
+      <section className="py-6">
+        <h2 className="text-2xl font-bold mb-6">All Posts</h2>
+        <div className="grid gap-6">
           {allPostsData.map(({ id, date, title }) => (
-            <li key={id} className="border-b pb-2">
-              <Link href={`/posts/${id}`} className="text-lg font-medium hover:underline">
-                {title}
+            <article key={id} className="border-b pb-5">
+              <Link 
+                href={`/posts/${id}`} 
+                className="block group"
+              >
+                <h3 className="text-xl font-semibold mb-2 group-hover:text-blue-600 transition-colors">
+                  {title}
+                </h3>
+                <div className="text-gray-500 text-sm mb-3">
+                  <Date dateString={date} />
+                </div>
               </Link>
-              <br />
-              <small className="text-gray-500">
-                <Date dateString={date} />
-              </small>
-            </li>
+            </article>
           ))}
-        </ul>
+        </div>
       </section>
     </Layout>
   );
