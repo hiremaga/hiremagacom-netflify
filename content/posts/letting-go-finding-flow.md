@@ -1,5 +1,5 @@
 ---
-title: Letting Go & Finding Flow - My Journey Through Rhythm
+title: Letting Go & Finding Flow - My Journey Through Rhythm And Renewal
 date: 2024-09-07
 ---
 
