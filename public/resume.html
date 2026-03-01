@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abhi Hiremagalur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+/* ── Reset ──────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Tokens ─────────────────────────────────────────── */
+:root {
+  --ink:      #141414;
+  --mid:      #383838;
+  --muted:    #787878;
+  --light:    #aaaaaa;
+  --rule:     #d8d2ca;
+  --accent:   #b85c38;
+  --bg:       #faf8f5;
+
+  --serif:    'Source Serif 4', Georgia, serif;
+  --display:  'Playfair Display', Georgia, serif;
+  --sans:     'Space Grotesk', Helvetica, sans-serif;
+
+  --page-w:   720px;
+  --pad:      64px;
+}
+
+/* ── Page shell ─────────────────────────────────────── */
+html { background: #e8e3dc; }
+
+body {
+  font-family: var(--serif);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--bg);
+  max-width: var(--page-w);
+  margin: 40px auto;
+  padding: var(--pad) var(--pad) 72px;
+  box-shadow: 0 6px 48px rgba(0,0,0,.14);
+}
+
+
+@media (max-width: 760px) {
+  body {
+    margin: 0;
+    padding: 32px 24px 48px;
+    box-shadow: none;
+  }
+  .masthead-top {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .masthead-role {
+    text-align: left;
+  }
+  .job-dates {
+    margin-left: 0;
+    padding-left: 0;
+    width: 100%;
+    margin-top: 2px;
+  }
+}
+
+/* ── Masthead ────────────────────────────────────────── */
+.masthead {
+  border-top: 3px solid var(--ink);
+  padding-top: 18px;
+  margin-bottom: 6px;
+}
+
+.masthead-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 14px;
+  margin-bottom: 10px;
+}
+
+.masthead h1 {
+  font-family: var(--display);
+  font-size: clamp(28px, 6vw, 46px);
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  line-height: 1;
+}
+
+.masthead-role {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: right;
+  flex-shrink: 0;
+  line-height: 1.5;
+}
+
+.masthead-contact {
+  font-family: var(--sans);
+  font-size: 11.5px;
+  color: var(--muted);
+  letter-spacing: 0.2px;
+}
+
+.masthead-contact a { color: var(--accent); text-decoration: none; }
+
+/* ── Summary lede ────────────────────────────────────── */
+.lede {
+  font-family: var(--serif);
+  font-size: 15px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--mid);
+  line-height: 1.7;
+  margin: 24px 0 0;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* ── Section ─────────────────────────────────────────── */
+.section-label {
+  font-family: var(--sans);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-top: 32px;
+  margin-bottom: 3px;
+}
+
+.section-rule {
+  border: none;
+  border-top: 1.5px solid var(--ink);
+  margin-bottom: 20px;
+}
+
+/* ── Job entry ───────────────────────────────────────── */
+.job {
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.job:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.job-meta {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-bottom: 7px;
+  line-height: 1.3;
+}
+
+.job-title {
+  font-family: var(--display);
+  font-size: 17.5px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--ink);
+  margin-right: 6px;
+}
+
+.job-sep {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--light);
+  margin: 0 6px;
+}
+
+.job-company {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.job-dates {
+  font-family: var(--sans);
+  font-size: 11.5px;
+  font-weight: 400;
+  color: var(--muted);
+  margin-left: auto;
+  white-space: nowrap;
+  padding-left: 16px;
+}
+
+.job-intro {
+  font-family: var(--serif);
+  font-size: 13.5px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--mid);
+  line-height: 1.65;
+  margin-bottom: 9px;
+}
+
+.job-bullets {
+  list-style: none;
+  padding: 0;
+}
+
+.job-bullets li {
+  font-family: var(--serif);
+  font-size: 13px;
+  color: var(--mid);
+  line-height: 1.58;
+  padding-left: 16px;
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.job-bullets li::before {
+  content: "\2014";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 300;
+  font-family: var(--sans);
+}
+
+/* ── How I Work ──────────────────────────────────────── */
+.principles {
+  list-style: none;
+  padding: 0;
+}
+
+.principles li {
+  font-family: var(--serif);
+  font-size: 13.5px;
+  color: var(--mid);
+  line-height: 1.65;
+  padding-left: 16px;
+  position: relative;
+  margin-bottom: 7px;
+}
+
+.principles li::before {
+  content: "\2014";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-family: var(--sans);
+}
+
+.principles li strong {
+  font-weight: 600;
+  font-style: italic;
+  color: var(--ink);
+}
+
+/* ── Education ───────────────────────────────────────── */
+.edu {
+  margin-bottom: 10px;
+}
+
+.edu-school {
+  font-family: var(--display);
+  font-size: 15px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--ink);
+}
+
+.edu-degree {
+  font-family: var(--serif);
+  font-size: 13px;
+  color: var(--mid);
+  margin-top: 2px;
+}
+
+.edu-meta {
+  font-family: var(--sans);
+  font-size: 11.5px;
+  color: var(--muted);
+  margin-top: 1px;
+}
+
+/* ── Appendix ────────────────────────────────────────── */
+.appendix-intro {
+  font-family: var(--serif);
+  font-size: 13px;
+  font-style: italic;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.appendix-links {
+  list-style: none;
+  padding: 0;
+}
+
+.appendix-links li {
+  font-family: var(--serif);
+  font-size: 13px;
+  color: var(--mid);
+  line-height: 1.6;
+  padding-left: 16px;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.appendix-links li::before {
+  content: "\2014";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-family: var(--sans);
+}
+
+.appendix-links a {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+}
+
+.appendix-links a:hover {
+  border-bottom-color: var(--accent);
+  color: var(--accent);
+}
+
+.appendix-desc {
+  color: var(--muted);
+  font-weight: 300;
+}
+
+
+/* ── Dark mode ───────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink:     #f0ece4;
+    --mid:     #c8c0b4;
+    --muted:   #8a8078;
+    --light:   #6a6058;
+    --rule:    #3a3530;
+    --accent:  #d4724a;
+    --bg:      #1a1714;
+  }
+
+  html { background: #111009; }
+
+  body { box-shadow: 0 6px 48px rgba(0,0,0,.5); }
+
+  .masthead        { border-top-color: var(--ink); }
+  .masthead-top    { border-bottom-color: var(--ink); }
+  .section-rule    { border-top-color: var(--ink); }
+}
+
+/* ── Print ───────────────────────────────────────────── */
+@media print {
+  @page {
+    size: letter;
+    margin: 14mm 16mm 14mm 16mm;
+  }
+
+  html { background: white; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    box-shadow: none;
+    background: white;
+    font-size: 11.5px;
+    line-height: 1.45;
+  }
+
+  :root { --pad: 0px; }
+
+  .masthead h1        { font-size: 34px; }
+  .lede               { font-size: 11.5px; }
+  .job-title          { font-size: 13.5px; }
+  .job-intro          { font-size: 11.5px; }
+  .job-bullets li     { font-size: 11px; }
+  .principles li      { font-size: 11.5px; }
+  .job                { break-inside: avoid; }
+  .section-label      { margin-top: 16px; }
+
+  .appendix-links a {
+    color: var(--ink);
+    border-bottom: none;
+  }
+
+  .appendix-links a::after {
+    content: " (" attr(href) ")";
+    font-size: 10px;
+    color: var(--muted);
+    font-style: italic;
+    font-weight: 300;
+  }
+}
+
+</style>
+</head>
+<body>
+
+  <!-- ── MASTHEAD ─────────────────────────────────── -->
+  <header class="masthead">
+    <div class="masthead-top">
+      <h1>Abhi Hiremagalur</h1>
+      <div class="masthead-role">Engineering Leader<br>Platform, Product &amp; People</div>
+    </div>
+    <p class="masthead-contact">
+      <a href="mailto:abhijit@hiremaga.com">abhijit@hiremaga.com</a>
+      &nbsp;&middot;&nbsp;
+      <a href="https://hiremaga.com">hiremaga.com</a>
+      &nbsp;&middot;&nbsp;
+      linkedin.com/in/hiremaga
+      &nbsp;&middot;&nbsp;
+      +1 (415) 370 1330
+      &nbsp;&middot;&nbsp;
+      San Francisco, CA
+    </p>
+  </header>
+
+  <!-- ── SUMMARY ───────────────────────────────────── -->
+  <p class="lede">Engineering leader who builds teams in complex, ambiguous domains and keeps them stable when organizations aren&rsquo;t. 20+ years across platform engineering, developer tooling, and design systems. Currently learning the billing and licensing domain and finding it genuinely interesting. Technically grounded by choice.</p>
+
+  <!-- ── HOW I WORK ─────────────────────────────────── -->
+  <p class="section-label">How I Work</p>
+  <hr class="section-rule">
+
+  <ul class="principles">
+    <li><strong>Hold user, business, and engineering in proportion.</strong> The best technical decisions come from teams that can hold all three at once: who they&rsquo;re building for, what makes the business work, and what the system can sustain. The skill is knowing which one to prioritize in the moment, and getting the team aligned on it.</li>
+    <li><strong>Facilitate, don&rsquo;t direct — except when direction is what&rsquo;s needed.</strong> My default is to create conditions: clear charters, structured risk conversations, pre-mortems, then get out of the way. When a situation calls for decisiveness I can provide that too.</li>
+    <li><strong>Stay technically grounded.</strong> Genuine curiosity, not credential maintenance. I follow real questions and build things to test my understanding.</li>
+    <li><strong>Sustainable pace as a default, not a dogma.</strong> Teams that rest and focus outperform teams that grind, most of the time. I know when a genuine sprint is warranted and how to call one without burning people out.</li>
+    <li><strong>Learn and share in the open.</strong> I build cultures where asking good questions is a sign of strength and reasoning is made visible: in the room, in documents, in how I run a pre-mortem. Occasionally, when something earns a more permanent form, I write at hiremaga.com. The same instinct, different cadences.</li>
+  </ul>
+
+  <!-- ── EXPERIENCE ────────────────────────────────── -->
+  <p class="section-label" style="break-before: page;">Experience</p>
+  <hr class="section-rule">
+
+  <div class="job">
+    <div class="job-meta">
+      <span class="job-title">Engineering Manager, Licensing &amp; Consumption-Based Billing</span>
+      <span class="job-sep">/</span>
+      <span class="job-company">Asana</span>
+      <span class="job-dates">Nov 2025&ndash;Present</span>
+    </div>
+    <p class="job-intro">Took on a critical platform domain with significant team attrition and no prior billing infrastructure experience. Ramped fast: find the right people, ask good questions, follow the business logic.</p>
+    <ul class="job-bullets">
+      <li>Hired 3 engineers within the first month, restoring team capacity before establishing new processes</li>
+      <li>Built early cross-functional relationships with finance, GTM, and engineering partners; established sprint cadences and a shared operating rhythm</li>
+      <li>Led the team to ship Entitlements as a platform capability despite ongoing attrition of key people mid-delivery</li>
+      <li>Drove a build-vs-buy evaluation for Asana&rsquo;s consumption metering infrastructure; produced a structured one-pager framing the ROI and clarifying stakeholder roles. My contribution was creating the conditions for a real decision to happen.</li>
+      <li>Wrote a competitive analysis of a key competitor&rsquo;s pricing evolution. A senior product leader praised it and shared it broadly, a signal that approaching a new domain like a journalist, with AI-assisted research, can produce work with reach.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-meta">
+      <span class="job-title">Engineering Manager, Design System</span>
+      <span class="job-sep">/</span>
+      <span class="job-company">Asana</span>
+      <span class="job-dates">Feb 2022&ndash;Nov 2025</span>
+    </div>
+    <p class="job-intro">Led a 7-person team building the UI foundation used by ~38 product teams across SF, NYC, Vancouver, and Warsaw. Consistent delivery through significant organizational change.</p>
+    <ul class="job-bullets">
+      <li>Facilitated the team through Modes, a high-stakes company-wide horizontal change touching every product surface: open risk documentation, experience-based risk briefs, a pre-mortem with group leads, deliberate staffing decisions. The infrastructure and design patterns the team built are positioned to be central to Asana&rsquo;s 2026 multi-product strategy.</li>
+      <li>Authored the Partnership Platform Flywheel, a strategic framework for platform&ndash;product collaboration drawing on Pivotal Labs and CloudFoundry experience. Adopted by design and product leadership.</li>
+      <li>Maintained delivery and cohesion through multiple leadership transitions and a major R&amp;D reduction in force.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-meta">
+      <span class="job-title">Engineering Manager &amp; Staff Engineer</span>
+      <span class="job-sep">/</span>
+      <span class="job-company">VMware Tanzu (formerly Pivotal)</span>
+      <span class="job-dates">Jan 2020&ndash;Oct 2021</span>
+    </div>
+    <ul class="job-bullets">
+      <li>Managed engineers building CI/CD infrastructure including Concourse; guided integration of Pivotal&rsquo;s engineering culture into VMware post-acquisition as a Change Agent Network member</li>
+      <li>As Staff Engineer, researched inner-loop tooling for Kubernetes developers and shipped a VS Code extension for Tanzu inner-loop development</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-meta">
+      <span class="job-title">Senior Manager, Software Engineering</span>
+      <span class="job-sep">/</span>
+      <span class="job-company">Pivotal, Inc.</span>
+      <span class="job-dates">2013&ndash;2020</span>
+    </div>
+    <p class="job-intro">7 years leading teams of 5&ndash;8 engineers across platform, consulting, and product work. Remained a working manager throughout, continuing to write code alongside management responsibilities.</p>
+    <ul class="job-bullets">
+      <li>Built the Sydney engineering office from scratch: hired the founding team, established processes, built cross-functional partnerships with design, product, and sales</li>
+      <li>Carried the customer-proximity instinct from Pivotal Labs into the CloudFoundry platform team; briefly formalized this as a Forward Deployed Engineer, supporting enterprise sales conversations at prospective clients including Wells Fargo and Visa.</li>
+      <li>Created org-wide engineering programs reaching hundreds of engineers; built skills matrices and management practices adopted across the org</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-meta">
+      <span class="job-title">Software Engineer &amp; Consultant</span>
+      <span class="job-sep">/</span>
+      <span class="job-company">Pivotal, Pivotal Labs, Cogent Consulting, Sharethrough</span>
+      <span class="job-dates">2003&ndash;2013</span>
+    </div>
+    <p class="job-intro">A decade practicing and teaching Extreme Programming, first embedded inside client teams, then on CloudFoundry. Working in customer codebases, on customer problems, built a lasting instinct for staying close to the people you&rsquo;re building for.</p>
+    <ul class="job-bullets">
+      <li>Delivered consulting engagements at clients including Twitter, EMI, and Best Buy across Australia, India, and the US</li>
+      <li>Led engineering on CloudFoundry&rsquo;s BOSH and Runtime teams; maintained Sprout Wrap, the OS image used by all Pivotal engineers</li>
+      <li>Established teams from scratch and helped mature teams build sustainable practices</li>
+    </ul>
+  </div>
+
+  <!-- ── EDUCATION ──────────────────────────────────── -->
+  <p class="section-label">Education</p>
+  <hr class="section-rule">
+
+  <div class="edu">
+    <div class="edu-school">Swinburne University of Technology</div>
+    <div class="edu-degree">Master of IT, Software Engineering</div>
+    <div class="edu-meta">Melbourne, Australia &middot; 2004&ndash;2006</div>
+  </div>
+  <div class="edu">
+    <div class="edu-degree">Bachelor of Computer Science, Software Engineering</div>
+    <div class="edu-meta">1999&ndash;2002</div>
+  </div>
+
+  <!-- ── APPENDIX ───────────────────────────────────── -->
+  <p class="section-label" style="margin-top:32px;">Further Reading</p>
+  <hr class="section-rule">
+
+  <ul class="appendix-links">
+    <li>
+      <a href="https://hiremaga.com/posts/art-of-the-pit-stop">The Art of the Pit Stop: What Software Teams Can Learn from Racing</a>
+      
+    </li>
+    <li>
+      <a href="https://hiremaga.com/posts/at-the-speed-of-trade-offs">At the Speed of Trade-offs</a>
+      
+    </li>
+    <li>
+      <a href="https://hiremaga.com/posts/process-is-for-people">Process is for People</a>
+      
+    </li>
+  </ul>
+
+</body>
+</html>
