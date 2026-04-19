@@ -11,28 +11,27 @@
     "newsletter:post": "node scripts/publish-to-buttondown.js"
   },
   "dependencies": {
-    "date-fns": "^2.30.0",
-    "dotenv": "^16.4.7",
+    "date-fns": "^4.1.0",
+    "dotenv": "^17.4.2",
     "gray-matter": "^4.0.3",
     "js-yaml": "^4.1.0",
     "next": "^14.1.0",
-    "node-fetch": "^2.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "remark": "^14.0.3",
-    "remark-html": "^15.0.2",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
     "rss": "^1.2.2"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.16",
     "@types/js-yaml": "^4.0.9",
-    "@types/node": "^20.11.5",
-    "@types/react": "^18.2.48",
+    "@types/node": "^22.0.0",
+    "@types/react": "^18.3.0",
     "@types/rss": "^0.0.32",
     "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.33",
+    "postcss": "^8.5.0",
     "tailwindcss": "^3.4.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.8.0"
   }
 }

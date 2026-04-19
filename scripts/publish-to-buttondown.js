@@ -1,11 +1,10 @@
 #!/usr/bin/env node
 
 // This script publishes the latest post to ButtonDown
-require('dotenv').config();
+require('dotenv').config({ quiet: true });
 const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
-const fetch = require('node-fetch');
 
 // Check for the ButtonDown API key
 const apiKey = process.env.BUTTONDOWN_API_KEY;
