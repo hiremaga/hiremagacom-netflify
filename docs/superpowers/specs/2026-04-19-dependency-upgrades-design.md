@@ -88,8 +88,8 @@ Stacks on PR 1. Contains all CVE fixes.
 
 ### Package changes
 
-- `next` `^14.1.0` → `^15.x` (latest 15.x patch)
-- `react` / `react-dom` `^18.2.0` → `^19.x`
+- `next` `^14.1.0` → `^15.5.15` (latest 15.x as of 2026-04-19)
+- `react` / `react-dom` `^18.2.0` → `^19.2.5`
 - `@types/react` `^18.2.48` → `^19.x`
 
 ### Code changes
