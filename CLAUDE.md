@@ -44,14 +44,40 @@ This is a static blog site built with Next.js and deployed on Netlify. The archi
 - Content processing logic is centralized in `src/lib/posts.ts`
 
 ### Page Structure
-- Homepage (`src/pages/index.tsx`): Lists all posts sorted by date
-- Individual posts (`src/pages/posts/[id].tsx`): Dynamic route for post content
+- Homepage (`src/pages/index.tsx`): lead + follow surface + all posts by date
+- Individual posts (`src/pages/posts/[id].tsx`): dynamic route for post content
+- About (`src/pages/about.tsx`): bio
+- Design System (`src/pages/design-system.tsx`): the codified Ranges catalog
 - Static generation using Next.js `getStaticProps` and `getStaticPaths`
 
 ### Styling and Layout
-- Uses Tailwind CSS with typography plugin for content styling
-- Shared layout component in `src/components/layout.tsx`
+- Uses Tailwind CSS, configured to consume the Ranges design tokens (see below)
+- Shared page frame in `src/components/Layout.tsx` (masthead + content + footer)
+- Markdown post bodies are styled by the `.essay` rules in `src/styles/globals.css`
 - Path aliases configured: `@/*` maps to `./src/*`
+
+### Design System — "Ranges"
+The site has a codified design system. **Read `/design-system` (the page at
+`src/pages/design-system.tsx`) — it is the living source of truth** and renders
+every token and component with its rationale.
+
+- **Colour tokens** live in `src/styles/tokens.css` as CSS custom properties.
+  This is the single source of truth for colour. The whole neutral ramp is one
+  teal hue faded by distance (`--bg` far haze → `--ink` near ridge); `--teal` is
+  the everyday interactive accent; `--horizon` is "the light", used at most once
+  per view (the New marker, echoed by the footer ridge). Never hard-code a hex.
+- **Non-colour scales** (spacing, radii, type, layout, elevation) live in
+  `tailwind.config.js`. Consume everything as semantic utilities: `bg-haze`,
+  `text-ink`, `rounded-card`, `max-w-measure`, `font-serif`, `text-display`.
+- **Theming** is light/dark/auto. Light is the default; dark applies under
+  `[data-theme="dark"]`. `ThemeScript` sets the resolved theme before first
+  paint (no flash); `ThemeToggle` persists the choice and "Auto" follows the OS.
+  Because colours are variables, no `dark:` variants are needed anywhere.
+- **Type**: Newsreader (serif) carries voice and reading; IBM Plex Sans is the
+  UI workhorse; Space Grotesk is reserved for design-system chrome; IBM Plex
+  Mono for specs/code. Loaded via `next/font` in `src/lib/fonts.ts`.
+- When unsure, follow Practical UI (Adham Dannaway) sensibilities and keep the
+  catalog in `src/lib/design-system.ts` in sync with any new token or component.
 
 ### External Integrations
 - **ButtonDown Newsletter**: Automated publishing via `scripts/publish-to-buttondown.js`
@@ -65,14 +91,17 @@ This is a static blog site built with Next.js and deployed on Netlify. The archi
 - Environment variables for ButtonDown API key stored in `.env`
 
 ### File Organization
-- `src/lib/`: Core utilities (posts processing, RSS generation)
-- `src/components/`: Reusable React components
-- `src/pages/`: Next.js pages and API routes
+- `src/lib/`: Core utilities (`posts.ts`, `fonts.ts`, `site.ts`, `design-system.ts`)
+- `src/components/`: Reusable React components (Layout, Masthead, ThemeToggle, …)
+- `src/styles/`: `tokens.css` (colour source of truth) and `globals.css`
+- `src/pages/`: Next.js pages
 - `content/posts/`: Markdown blog posts
 - `scripts/`: Build and deployment scripts
 - `public/`: Static assets and Netlify configuration
 
 ### URL Structure
 - Blog home: `/`
-- Individual posts: `/posts/[post-id]`
+- Individual posts: `/posts/[post-id]` (unchanged)
+- About: `/about`
+- Design system: `/design-system`
 - Legacy redirects from old URL structure handled by Netlify

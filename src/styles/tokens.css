@@ -1,0 +1,116 @@
+/*
+ * RANGES — colour tokens (the single source of truth for colour)
+ * ----------------------------------------------------------------------------
+ * The whole palette is ONE teal hue faded by distance, like mountain ranges
+ * receding into haze (atmospheric perspective). Backgrounds are the far, hazy
+ * end of the ramp; ink is the near, deep end. There is exactly one warm accent
+ * — "horizon" — which plays the role of light and is used at most once per view.
+ *
+ * Rules of the road (see /design-system for the full rationale):
+ *   1. Every colour in the product is a semantic variable defined here. Nothing
+ *      hard-codes a hex value. Change a value here and it changes everywhere.
+ *   2. Neutrals come only from the ladder below (bg -> ink). Never introduce an
+ *      off-hue grey; it will read as dirty next to the teal cast.
+ *   3. `--teal` is the everyday interactive accent (links, buttons, active nav).
+ *      `--horizon` is "the light": the single freshest/most important thing in a
+ *      view (the "New" marker) and the lit ridge in the footer motif. Never use
+ *      horizon on categories, multiples, or decoration.
+ *
+ * Theming: light is the default. Dark applies to any subtree under
+ * `[data-theme="dark"]`. A tiny script (ThemeScript) resolves the reader's
+ * preference — light / dark / system — into a concrete `data-theme` on <html>
+ * before first paint, so there is no flash. Because the selectors are not tied
+ * to `:root`, a local `[data-theme="dark"]` (or `"light"`) element creates a
+ * theme island — used on /design-system to show both palettes at once. Only
+ * colour changes between themes; structure and spacing are identical.
+ */
+
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+
+  /* Ladder — far haze (page) -> near ridge (ink). Neutrals live here. */
+  --bg: #f1f5f5;        /* page background — the far haze            */
+  --surface: #ffffff;   /* raised surfaces — cards, inputs, popovers */
+  --haze: #e7eeed;      /* subtle fill — callouts, active pills      */
+  --mist: #dde6e5;      /* hairlines and dividers                    */
+  --far: #93a5a4;       /* faint text — meta, dates, captions        */
+  --mid: #5e7372;       /* secondary text — idle nav, sub-labels     */
+  --near: #344847;      /* body text                                 */
+  --lead: #415554;      /* lead / standfirst                         */
+  --ink: #1d2b2a;       /* headings and primary text                 */
+
+  /* Interactive accent — the everyday teal. */
+  --teal: #2d7176;
+  --teal-hover: #245c60;
+  --on-teal: #ffffff;   /* text/icon on a teal fill */
+
+  /* "The light" — horizon. Rare and warm; at most once per view. */
+  --horizon: #db4f8a;
+  --horizon-text: #b32d6b;
+  --horizon-fill: rgba(219, 79, 138, 0.10); /* faint wash behind the New marker */
+  --horizon-glow: rgba(219, 79, 138, 0.30); /* soft halo on the New marker      */
+
+  /* Component-specific colours, all drawn from the same hue. */
+  --row-hover: rgba(45, 113, 118, 0.06); /* list-row hover wash    */
+  --link-bd: rgba(45, 113, 118, 0.35);   /* inline-link underline  */
+  --input-bd: #cdd9d8;                    /* input border           */
+  --quote-bd: #a9cdcd;                    /* blockquote rule        */
+  --quote-fg: #2a3a39;                    /* blockquote text        */
+  --divider: #b6c5c4;                     /* "* * *" section break  */
+
+  /* Brand mark — the three fading teal bands of the "ranges" glyph. */
+  --glyph-1: #9fc3c4;
+  --glyph-2: #5d989c;
+  --glyph-3: #2f6f73;
+
+  /* Footer ridge motif — whisper-low ranges silhouette. */
+  --motif-1: #e7eeed;
+  --motif-2: #d6e3e1;
+  --motif-3: #c2d6d4;
+
+  /* About portrait placeholder hatch. */
+  --portrait-1: #e2ecec;
+  --portrait-2: #d6e4e3;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #101a1a;
+  --surface: #15211f;
+  --haze: #1a2c2a;
+  --mist: #283a38;
+  --far: #5f7573;
+  --mid: #93a6a4;
+  --near: #bccbc9;
+  --lead: #aebcba;
+  --ink: #e6efed;
+
+  --teal: #5fb0b3;
+  --teal-hover: #79c2c4;
+  --on-teal: #0c1716;
+
+  --horizon: #ff84bd;
+  --horizon-text: #ffabd4;
+  --horizon-fill: rgba(255, 132, 189, 0.12);
+  --horizon-glow: rgba(255, 132, 189, 0.30);
+
+  --row-hover: rgba(95, 176, 179, 0.08);
+  --link-bd: rgba(121, 194, 196, 0.40);
+  --input-bd: #2f413e;
+  --quote-bd: #2f5450;
+  --quote-fg: #d4dedb;
+  --divider: #3a4a47;
+
+  --glyph-1: #bfe0df;
+  --glyph-2: #7fb5b8;
+  --glyph-3: #4f8e92;
+
+  --motif-1: #1a2c2a;
+  --motif-2: #223a37;
+  --motif-3: #2c4a46;
+
+  --portrait-1: #1a2c2a;
+  --portrait-2: #223a37;
+}

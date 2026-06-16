@@ -1,8 +1,11 @@
-import { GetStaticProps, GetStaticPaths } from 'next';
 import Head from 'next/head';
+import Link from 'next/link';
+import type { GetStaticPaths, GetStaticProps } from 'next';
+import Layout from '@/components/Layout';
+import PostDate from '@/components/PostDate';
+import SubscribeCallout from '@/components/SubscribeCallout';
 import { getAllPostIds, getPostData } from '@/lib/posts';
-import Layout from '@/components/layout';
-import Date from '@/components/date';
+import { site } from '@/lib/site';
 
 type PostData = {
   id: string;
@@ -11,56 +14,59 @@ type PostData = {
   contentHtml: string;
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getAllPostIds();
-  return {
-    paths,
-    fallback: false,
-  };
-};
+const blueskyUrl = 'https://bsky.app/profile/hiremaga.com';
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const postData = await getPostData(params?.id as string);
-  return {
-    props: {
-      postData,
-    },
-  };
-};
+export const getStaticPaths: GetStaticPaths = async () => ({
+  paths: getAllPostIds(),
+  fallback: false,
+});
+
+export const getStaticProps: GetStaticProps<{ postData: PostData }> = async ({ params }) => ({
+  props: { postData: await getPostData(params?.id as string) },
+});
 
 export default function Post({ postData }: { postData: PostData }) {
   return (
-    <Layout>
+    <Layout active="writing">
       <Head>
-        <title>{postData.title} | Abhi Hiremagalur</title>
-        <meta name="description" content={`${postData.title} - An article by Abhi Hiremagalur`} />
-        <meta property="og:title" content={`${postData.title} | Abhi Hiremagalur`} />
+        <title>{`${postData.title} | ${site.name}`}</title>
+        <meta name="description" content={`${postData.title} — an essay by ${site.name}.`} />
+        <meta property="og:title" content={`${postData.title} | ${site.name}`} />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://hiremaga.com/posts/${postData.id}`} />
+        <meta property="og:url" content={`${site.url}/posts/${postData.id}`} />
       </Head>
-      <article className="max-w-prose mx-auto">
-        <header className="mb-8">
-          <h1 className="text-3xl sm:text-4xl font-bold mb-3">{postData.title}</h1>
-          <div className="text-gray-500">
-            <Date dateString={postData.date} />
-          </div>
-        </header>
-        <div 
-          className="prose prose-lg prose-blue max-w-none"
-          dangerouslySetInnerHTML={{ __html: postData.contentHtml }} 
-        />
-        <div className="mt-12 pt-6 border-t text-gray-500">
-          <p>
-            Thanks for reading! Want to discuss this post? 
-            <a 
-              href={`https://bsky.app/profile/hiremaga.com`} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="ml-1 text-blue-600 hover:underline"
-            >
-              Find me on Bluesky
-            </a>.
-          </p>
+
+      {/* The whole article column is capped at the reading measure. */}
+      <article className="max-w-measure pt-9">
+        <Link
+          href="/"
+          className="font-sans text-ui font-medium text-mid no-underline transition-colors hover:text-teal"
+        >
+          ← All writing
+        </Link>
+
+        <div className="mt-7 font-sans text-meta uppercase tracking-[0.05em] text-far">
+          <PostDate dateString={postData.date} />
+        </div>
+        <h1 className="mt-3 font-serif text-display font-semibold text-ink">{postData.title}</h1>
+
+        <div className="essay mt-8" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+
+        <p className="mt-10 border-t border-mist pt-6 font-serif text-base leading-relaxed text-mid">
+          Thanks for reading! Want to discuss this post?{' '}
+          <a
+            href={blueskyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border-b border-link-bd text-teal no-underline transition-colors hover:border-teal"
+          >
+            Find me on Bluesky
+          </a>
+          .
+        </p>
+
+        <div className="mt-6">
+          <SubscribeCallout />
         </div>
       </article>
     </Layout>
