@@ -1,54 +1,39 @@
 import Head from 'next/head';
-import Link from 'next/link';
+import type { GetStaticProps } from 'next';
+import Layout from '@/components/Layout';
+import PostList, { type PostMeta } from '@/components/PostList';
+import SubscribeForm from '@/components/SubscribeForm';
+import FollowLinks from '@/components/FollowLinks';
 import { getSortedPostsData } from '@/lib/posts';
-import Layout from '@/components/layout';
-import Date from '@/components/date';
-import { GetStaticProps } from 'next';
+import { site } from '@/lib/site';
 
-export const getStaticProps: GetStaticProps = async () => {
-  const allPostsData = getSortedPostsData();
-  return {
-    props: {
-      allPostsData,
-    },
-  };
-};
+export const getStaticProps: GetStaticProps<{ posts: PostMeta[] }> = async () => ({
+  props: { posts: getSortedPostsData() },
+});
 
-type Post = {
-  id: string;
-  date: string;
-  title: string;
-};
-
-export default function Home({ 
-  allPostsData 
-}: { 
-  allPostsData: Post[]
-}) {
+export default function Home({ posts }: { posts: PostMeta[] }) {
   return (
-    <Layout home>
+    <Layout active="writing">
       <Head>
-        <title>Abhi Hiremagalur</title>
+        <title>{site.name}</title>
+        <meta name="description" content={site.description} />
       </Head>
-      <section className="py-6">
-        <h2 className="text-2xl font-bold mb-6">All Posts</h2>
-        <div className="grid gap-6">
-          {allPostsData.map(({ id, date, title }) => (
-            <article key={id} className="border-b pb-5">
-              <Link 
-                href={`/posts/${id}`} 
-                className="block group"
-              >
-                <h3 className="text-xl font-semibold mb-2 group-hover:text-blue-600 transition-colors">
-                  {title}
-                </h3>
-                <div className="text-gray-500 text-sm mb-3">
-                  <Date dateString={date} />
-                </div>
-              </Link>
-            </article>
-          ))}
+
+      {/* Lead + a single follow surface: subscribe and social together. */}
+      <section className="pt-10">
+        <p className="max-w-measure font-serif text-standfirst text-lead">{site.lead}</p>
+        <div className="mt-6 flex flex-wrap items-center gap-4">
+          <SubscribeForm size="lg" />
+          <div className="flex items-center gap-3 font-sans text-meta text-far">
+            <span>or follow on</span>
+            <FollowLinks tone="mid" className="gap-3.5" />
+          </div>
         </div>
+      </section>
+
+      <section className="pt-10">
+        <h2 className="mb-2 font-sans text-eyebrow uppercase text-far">All writing</h2>
+        <PostList posts={posts} />
       </section>
     </Layout>
   );
