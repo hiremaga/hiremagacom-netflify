@@ -8,10 +8,10 @@ export const site = {
   name: 'Abhi Hiremagalur',
   /** Reading-page intro shown on the home screen (the lede). */
   lead:
-    "I'm an engineering manager. Recently I've been learning Rust the way I learned to love rather than fear water at forty: slowly, awkwardly, on purpose. I write here about software, the people who build it, and what I'm learning next.",
+    "I'm an engineering manager. Recently I've been learning Rust the way I learned to love swimming at forty: slowly, awkwardly, on purpose. I write here about software, the people who build it, and what I'm learning next.",
   /** Plain-text version of the lede for <meta> tags (no markdown/links). */
   description:
-    "I'm an engineering manager. Recently I've been learning Rust the way I learned to love rather than fear water at forty: slowly, awkwardly, on purpose. I write here about software, the people who build it, and what I'm learning next.",
+    "I'm an engineering manager. Recently I've been learning Rust the way I learned to love swimming at forty: slowly, awkwardly, on purpose. I write here about software, the people who build it, and what I'm learning next.",
   url: 'https://hiremaga.com',
   newsletterAction: 'https://buttondown.email/api/emails/embed-subscribe/hiremaga',
 } as const;
