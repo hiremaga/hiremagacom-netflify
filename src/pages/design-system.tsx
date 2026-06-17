@@ -128,7 +128,7 @@ function ComponentCard({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-w-[340px] flex-1 rounded-frame border border-mist bg-surface p-6">
+    <div className="w-full rounded-frame border border-mist bg-surface p-6 sm:w-auto sm:min-w-[340px] sm:flex-1">
       <div className="font-sans text-[11px] font-semibold uppercase tracking-[0.12em] text-far">
         {label}
       </div>
@@ -216,10 +216,12 @@ export default function DesignSystem({ tokensCss }: { tokensCss: string }) {
             {typeScale.map((row) => (
               <div
                 key={row.spec}
-                className="flex items-baseline gap-6 border-t border-mist py-4 first:border-t-0"
+                className="flex flex-col gap-2 border-t border-mist py-4 first:border-t-0 sm:flex-row sm:items-baseline sm:gap-6"
               >
-                <div className={`flex-1 ${row.className}`}>{row.sample}</div>
-                <div className="w-[240px] flex-none font-mono text-[12px] text-far">{row.spec}</div>
+                <div className={`min-w-0 flex-1 ${row.className}`}>{row.sample}</div>
+                <div className="w-full flex-none font-mono text-[12px] text-far sm:w-[240px]">
+                  {row.spec}
+                </div>
               </div>
             ))}
           </div>
@@ -227,7 +229,7 @@ export default function DesignSystem({ tokensCss }: { tokensCss: string }) {
 
         {/* Spacing + radii + elevation */}
         <div className="flex flex-wrap gap-5">
-          <Panel className="min-w-[420px] flex-1">
+          <Panel className="w-full sm:w-auto sm:min-w-[420px] sm:flex-1">
             <PanelHeading title="Spacing · 4px base" note="Section rhythm is 40; the card gutter is 48." />
             <div className="flex flex-col gap-2.5">
               {spacing.map((px) => (
@@ -239,7 +241,7 @@ export default function DesignSystem({ tokensCss }: { tokensCss: string }) {
             </div>
           </Panel>
 
-          <Panel className="min-w-[300px] flex-1">
+          <Panel className="w-full sm:w-auto sm:min-w-[300px] sm:flex-1">
             <PanelHeading title="Radii" note="Smaller for inline, larger for surfaces." />
             <div className="flex flex-wrap gap-[18px]">
               {radii.map((r) => (
