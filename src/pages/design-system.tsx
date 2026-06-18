@@ -152,7 +152,7 @@ export const getStaticProps: GetStaticProps<{ tokensCss: string }> = async () =>
 
 export default function DesignSystem({ tokensCss }: { tokensCss: string }) {
   return (
-    <Layout active="design-system" width="wide" motif={false}>
+    <Layout active="design-system" motif={false}>
       <Head>
         <title>{`Design System | ${site.name}`}</title>
         <meta name="description" content="Ranges — the design system behind this site." />

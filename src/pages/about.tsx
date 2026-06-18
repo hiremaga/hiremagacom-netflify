@@ -23,7 +23,7 @@ function InlineLink({ href, children }: { href: string; children: React.ReactNod
 
 export default function About() {
   return (
-    <Layout active="about" width="about">
+    <Layout active="about">
       <Head>
         <title>{`About | ${site.name}`}</title>
         <meta name="description" content={`About ${site.name}.`} />
@@ -43,7 +43,7 @@ export default function About() {
 
         <h1 className="mt-7 font-serif text-h1 font-semibold text-ink">About</h1>
 
-        <div className="mt-[18px] max-w-[520px] font-serif text-lg leading-[1.75] text-near">
+        <div className="mt-[18px] max-w-measure font-serif text-lg leading-[1.75] text-near">
           <p className="mb-[18px]">
             I&apos;m an engineering manager. I write about software, the people who build it, and
             what I&apos;m still learning about doing the work well.

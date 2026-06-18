@@ -96,7 +96,6 @@ module.exports = {
 
       maxWidth: {
         measure: '600px', // reading measure — prose never runs wider
-        about: '640px',   // narrower About frame
         frame: '760px',   // standard page frame
       },
 
