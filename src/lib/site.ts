@@ -21,6 +21,8 @@ export const site = {
   url: siteConfig.url,
   bluesky: siteConfig.bluesky,
   newsletterAction: 'https://buttondown.email/api/emails/embed-subscribe/hiremaga',
+  /** Set by `npm run atproto` once it discovers the account's DID. Null until then. */
+  atprotoDid: siteConfig.atproto.did,
 } as const;
 
 export type NavKey = 'writing' | 'about' | 'design-system';

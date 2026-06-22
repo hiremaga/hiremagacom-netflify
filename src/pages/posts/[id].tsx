@@ -6,6 +6,7 @@ import PostDate from '@/components/PostDate';
 import SubscribeCallout from '@/components/SubscribeCallout';
 import { getAllPostIds, getPostData } from '@/lib/posts';
 import { site } from '@/lib/site';
+import { documentUri, publicationUri } from '@/lib/atproto.mjs';
 
 type PostData = {
   id: string;
@@ -32,6 +33,12 @@ export default function Post({ postData }: { postData: PostData }) {
         <meta property="og:title" content={`${postData.title} | ${site.name}`} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={`${site.url}/posts/${postData.id}`} />
+        {site.atprotoDid && (
+          <>
+            <link rel="site.standard.document" href={documentUri(site.atprotoDid, postData.date)} />
+            <link rel="site.standard.publication" href={publicationUri(site.atprotoDid)} />
+          </>
+        )}
       </Head>
 
       {/* The whole article column is capped at the reading measure. */}

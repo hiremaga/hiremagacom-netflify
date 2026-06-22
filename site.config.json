@@ -1,5 +1,9 @@
 {
   "url": "https://hiremaga.com",
   "name": "Abhi Hiremagalur",
-  "bluesky": "https://bsky.app/profile/hiremaga.com"
+  "bluesky": "https://bsky.app/profile/hiremaga.com",
+  "atproto": {
+    "did": null,
+    "publicationRkey": "self"
+  }
 }
