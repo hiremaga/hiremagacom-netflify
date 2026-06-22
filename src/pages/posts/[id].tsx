@@ -14,8 +14,6 @@ type PostData = {
   contentHtml: string;
 };
 
-const blueskyUrl = 'https://bsky.app/profile/hiremaga.com';
-
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: getAllPostIds(),
   fallback: false,
@@ -55,7 +53,7 @@ export default function Post({ postData }: { postData: PostData }) {
         <p className="mt-10 border-t border-mist pt-6 font-serif text-base leading-relaxed text-mid">
           Thanks for reading! Want to discuss this post?{' '}
           <a
-            href={blueskyUrl}
+            href={site.bluesky}
             target="_blank"
             rel="noopener noreferrer"
             className="border-b border-link-bd text-teal no-underline transition-colors hover:border-teal"
