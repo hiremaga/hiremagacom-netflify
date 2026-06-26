@@ -6,6 +6,7 @@ import SubscribeForm from '@/components/SubscribeForm';
 import FollowLinks from '@/components/FollowLinks';
 import { getSortedPostsData } from '@/lib/posts';
 import { site } from '@/lib/site';
+import { publicationUri } from '@/lib/atproto.mjs';
 
 export const getStaticProps: GetStaticProps<{ posts: PostMeta[] }> = async () => ({
   props: { posts: getSortedPostsData() },
@@ -17,6 +18,9 @@ export default function Home({ posts }: { posts: PostMeta[] }) {
       <Head>
         <title>{site.name}</title>
         <meta name="description" content={site.description} />
+        {site.atprotoDid && (
+          <link rel="site.standard.publication" href={publicationUri(site.atprotoDid)} />
+        )}
       </Head>
 
       {/* Lead + a single follow surface: subscribe and social together. */}

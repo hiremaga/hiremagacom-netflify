@@ -9,30 +9,39 @@
             <link>https://hiremaga.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 16 Jun 2026 12:44:17 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 22 Jun 2026 14:46:35 GMT</lastBuildDate>
         <atom:link href="https://hiremaga.com/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Tue, 16 Jun 2026 12:44:17 GMT</pubDate>
+        <pubDate>Mon, 22 Jun 2026 14:46:35 GMT</pubDate>
         <copyright><![CDATA[2026 Abhi Hiremagalur]]></copyright>
         <item>
-            <title><![CDATA[More vibrant Go in 3 moves]]></title>
+            <title><![CDATA[The First Two Weeks]]></title>
             <description><![CDATA[
-# Move 1: Describe interactions with roles
+Asana gives everyone a sabbatical at four years. I joined knowing that and I'd been looking forward to mine. I'd taken a five-month break between jobs a few years ago, the first long pause of my career. I knew what unstructured time could do.
 
-[Go's](http://golang.org/) interfaces are [satisfied implicitly](http://nathany.com/good/#toc_8), making it incredibly easy to create [role interfaces](http://martinfowler.com/bliki/RoleInterface.html).
-
-Describing new roles as we implement a method lets ...]]></description>
-            <link>https://hiremaga.com/posts/3-moves</link>
-            <guid isPermaLink="true">https://hiremaga.com/posts/3-moves</guid>
-            <pubDate>Sat, 25 Jan 2014 00:00:00 GMT</pubDate>
+The first day was a Saturday. It didn't feel like the f...]]></description>
+            <link>https://hiremaga.com/posts/the-first-two-weeks</link>
+            <guid isPermaLink="true">https://hiremaga.com/posts/the-first-two-weeks</guid>
+            <pubDate>Sun, 31 May 2026 00:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[The Art of the Pit Stop - What Software Teams Can Learn from Racing]]></title>
+            <title><![CDATA[The Athletic Position]]></title>
             <description><![CDATA[
-> TL;DR: Like racing teams making strategic pit stops, software teams must master the art of planned technical investments. Success comes from timing them well, having clear purposes, and executing with full team alignment.
-Every weekend during racing season, teams of engineers and mechanics make s...]]></description>
-            <link>https://hiremaga.com/posts/art-of-the-pit-stop</link>
-            <guid isPermaLink="true">https://hiremaga.com/posts/art-of-the-pit-stop</guid>
-            <pubDate>Sat, 22 Feb 2025 00:00:00 GMT</pubDate>
+## I. Before the Ball Leaves their Strings
+
+There is a moment from the 1988 French Open final that most people who talk about tennis haven't had to think about carefully.
+
+Steffi Graf plays Natasha Zvereva. Zvereva is seventeen. She has just beaten Martina Navratilova in the fourth round on pure ne...]]></description>
+            <link>https://hiremaga.com/posts/the-athletic-position</link>
+            <guid isPermaLink="true">https://hiremaga.com/posts/the-athletic-position</guid>
+            <pubDate>Wed, 15 Apr 2026 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Questions, Answers and the Room Between]]></title>
+            <description><![CDATA[
+There's a particular sadness to a missed connection between a question and its answer. Someone asks. The response covers everything they already knew, or introduces terms they don't recognize, or solves a different problem entirely. Twenty minutes pass. The asker walks away with almost nothing. The...]]></description>
+            <link>https://hiremaga.com/posts/questions-answers-room-between</link>
+            <guid isPermaLink="true">https://hiremaga.com/posts/questions-answers-room-between</guid>
+            <pubDate>Fri, 20 Feb 2026 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[At the Speed of Trade-offs]]></title>
@@ -43,12 +52,13 @@ Amongst [Asana's values](https://asana.com/resources/company-values-examples), "
             <pubDate>Thu, 02 Oct 2025 00:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Design partnerships not job descriptions]]></title>
+            <title><![CDATA[The Art of the Pit Stop - What Software Teams Can Learn from Racing]]></title>
             <description><![CDATA[
-When designing organizations much effort can be put into defining individual roles. It's important to clearly spell out each individual's responsibilities. Or so goes a type of [conventional wisdom](https://www.google.com/search?q=job+description). In fact, this idea misses the reality of collabora...]]></description>
-            <link>https://hiremaga.com/posts/design-partnerships-not-job-descriptions</link>
-            <guid isPermaLink="true">https://hiremaga.com/posts/design-partnerships-not-job-descriptions</guid>
-            <pubDate>Sun, 24 Oct 2021 00:00:00 GMT</pubDate>
+> TL;DR: Like racing teams making strategic pit stops, software teams must master the art of planned technical investments. Success comes from timing them well, having clear purposes, and executing with full team alignment.
+Every weekend during racing season, teams of engineers and mechanics make s...]]></description>
+            <link>https://hiremaga.com/posts/art-of-the-pit-stop</link>
+            <guid isPermaLink="true">https://hiremaga.com/posts/art-of-the-pit-stop</guid>
+            <pubDate>Sat, 22 Feb 2025 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Letting Go & Finding Flow - My Journey Through Rhythm And Renewal]]></title>
@@ -67,42 +77,12 @@ Understanding the needs of another person is immensely helpful in tuning our beh
             <pubDate>Sat, 04 Feb 2023 00:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Process is for people]]></title>
+            <title><![CDATA[Design partnerships not job descriptions]]></title>
             <description><![CDATA[
-This week a few colleagues and I, software engineers and managers at [VMware Tanzu](https://tanzu.vmware.com/), attended the third installment of [LeadDev Together](https://leaddev.com/course/together). This deep-dive was about defining, refining, and aligning processes. We heard from several accom...]]></description>
-            <link>https://hiremaga.com/posts/process-is-for-people</link>
-            <guid isPermaLink="true">https://hiremaga.com/posts/process-is-for-people</guid>
-            <pubDate>Thu, 01 Oct 2020 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Questions, Answers and the Room Between]]></title>
-            <description><![CDATA[
-There's a particular sadness to a missed connection between a question and its answer. Someone asks. The response covers everything they already knew, or introduces terms they don't recognize, or solves a different problem entirely. Twenty minutes pass. The asker walks away with almost nothing. The...]]></description>
-            <link>https://hiremaga.com/posts/questions-answers-room-between</link>
-            <guid isPermaLink="true">https://hiremaga.com/posts/questions-answers-room-between</guid>
-            <pubDate>Fri, 20 Feb 2026 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[The Athletic Position]]></title>
-            <description><![CDATA[
-## I. Before the Ball Leaves their Strings
-
-There is a moment from the 1988 French Open final that most people who talk about tennis haven't had to think about carefully.
-
-Steffi Graf plays Natasha Zvereva. Zvereva is seventeen. She has just beaten Martina Navratilova in the fourth round on pure ne...]]></description>
-            <link>https://hiremaga.com/posts/the-athletic-position</link>
-            <guid isPermaLink="true">https://hiremaga.com/posts/the-athletic-position</guid>
-            <pubDate>Wed, 15 Apr 2026 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[The First Two Weeks]]></title>
-            <description><![CDATA[
-Asana gives everyone a sabbatical at four years. I joined knowing that and I'd been looking forward to mine. I'd taken a five-month break between jobs a few years ago, the first long pause of my career. I knew what unstructured time could do.
-
-The first day was a Saturday. It didn't feel like the f...]]></description>
-            <link>https://hiremaga.com/posts/the-first-two-weeks</link>
-            <guid isPermaLink="true">https://hiremaga.com/posts/the-first-two-weeks</guid>
-            <pubDate>Sun, 31 May 2026 00:00:00 GMT</pubDate>
+When designing organizations much effort can be put into defining individual roles. It's important to clearly spell out each individual's responsibilities. Or so goes a type of [conventional wisdom](https://www.google.com/search?q=job+description). In fact, this idea misses the reality of collabora...]]></description>
+            <link>https://hiremaga.com/posts/design-partnerships-not-job-descriptions</link>
+            <guid isPermaLink="true">https://hiremaga.com/posts/design-partnerships-not-job-descriptions</guid>
+            <pubDate>Sun, 24 Oct 2021 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Unfamiliar water]]></title>
@@ -111,6 +91,14 @@ When I arrived at Coach Stuart McDougal's [swim workshop](https://www.mindbodyan
             <link>https://hiremaga.com/posts/unfamiliar-water</link>
             <guid isPermaLink="true">https://hiremaga.com/posts/unfamiliar-water</guid>
             <pubDate>Mon, 12 Jul 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Process is for people]]></title>
+            <description><![CDATA[
+This week a few colleagues and I, software engineers and managers at [VMware Tanzu](https://tanzu.vmware.com/), attended the third installment of [LeadDev Together](https://leaddev.com/course/together). This deep-dive was about defining, refining, and aligning processes. We heard from several accom...]]></description>
+            <link>https://hiremaga.com/posts/process-is-for-people</link>
+            <guid isPermaLink="true">https://hiremaga.com/posts/process-is-for-people</guid>
+            <pubDate>Thu, 01 Oct 2020 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[To reduce the cost of change, compose don't inherit]]></title>
@@ -123,6 +111,18 @@ When changing one part of a codebase, we must account for the other parts know a
             <link>https://hiremaga.com/posts/why-i-prefer-composition-over-inheritance</link>
             <guid isPermaLink="true">https://hiremaga.com/posts/why-i-prefer-composition-over-inheritance</guid>
             <pubDate>Sun, 26 Jan 2014 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[More vibrant Go in 3 moves]]></title>
+            <description><![CDATA[
+# Move 1: Describe interactions with roles
+
+[Go's](http://golang.org/) interfaces are [satisfied implicitly](http://nathany.com/good/#toc_8), making it incredibly easy to create [role interfaces](http://martinfowler.com/bliki/RoleInterface.html).
+
+Describing new roles as we implement a method lets ...]]></description>
+            <link>https://hiremaga.com/posts/3-moves</link>
+            <guid isPermaLink="true">https://hiremaga.com/posts/3-moves</guid>
+            <pubDate>Sat, 25 Jan 2014 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

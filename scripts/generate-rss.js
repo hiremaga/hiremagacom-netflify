@@ -2,13 +2,11 @@
 
 // This script generates an RSS feed for the blog
 const fs = require('fs');
-const path = require('path');
+const { readAllPosts } = require('../src/lib/frontmatter');
 const RSS = require('rss');
-const matter = require('gray-matter');
+const { url: site_url } = require('../site.config.json');
 
 async function generateFeed() {
-  const site_url = 'https://hiremaga.com';
-  
   const feedOptions = {
     title: 'Abhi Hiremagalur | Blog',
     description: 'Articles and thoughts from Abhi Hiremagalur',
@@ -21,58 +19,24 @@ async function generateFeed() {
 
   const feed = new RSS(feedOptions);
 
-  // Get posts data directly from file system
-  const postsDirectory = path.join(process.cwd(), 'content/posts');
-  
-  // If directory doesn't exist, return early
-  if (!fs.existsSync(postsDirectory)) {
-    console.log('Posts directory not found, creating empty RSS feed');
-  } else {
-    // Get file names under /posts
-    const fileNames = fs.readdirSync(postsDirectory);
-    
-    fileNames
-      .filter(fileName => fileName.endsWith('.md'))
-      .forEach((fileName) => {
-        // Remove ".md" from file name to get id
-        const id = fileName.replace(/\.md$/, '');
-        
-        try {
-          // Read markdown file as string
-          const fullPath = path.join(postsDirectory, fileName);
-          const fileContents = fs.readFileSync(fullPath, 'utf8');
-          
-          // Use gray-matter to parse the post metadata section
-          const matterResult = matter(fileContents);
-          
-          // Extract data and provide defaults if missing
-          const title = matterResult.data.title || 'Untitled';
-          const date = matterResult.data.date 
-            ? new Date(matterResult.data.date).toISOString() 
-            : new Date('1970-01-01').toISOString();
-          
-          // Add the post to the feed
-          feed.item({
-            title: title,
-            description: matterResult.content.slice(0, 300) + '...',
-            url: `${site_url}/posts/${id}`,
-            date: date,
-          });
-        } catch (error) {
-          console.error(`Error processing ${fileName} for RSS feed:`, error);
-        }
-      });
-  }
+  readAllPosts().forEach((post) => {
+    feed.item({
+      title: post.title,
+      description: post.content.slice(0, 300) + '...',
+      url: `${site_url}/posts/${post.id}`,
+      date: new Date(post.date).toISOString(),
+    });
+  });
 
   // Write to both public and out directories to ensure it's available in dev and production
   fs.mkdirSync('./public', { recursive: true });
   fs.writeFileSync('./public/rss.xml', feed.xml({ indent: true }));
-  
+
   // Also write to the 'out' directory if it exists (for NextJS export)
   if (fs.existsSync('./out')) {
     fs.writeFileSync('./out/rss.xml', feed.xml({ indent: true }));
   }
-  
+
   console.log('RSS feed generated successfully');
 }
 

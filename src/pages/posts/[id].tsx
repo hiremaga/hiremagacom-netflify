@@ -6,6 +6,7 @@ import PostDate from '@/components/PostDate';
 import SubscribeCallout from '@/components/SubscribeCallout';
 import { getAllPostIds, getPostData } from '@/lib/posts';
 import { site } from '@/lib/site';
+import { documentUri, publicationUri } from '@/lib/atproto.mjs';
 
 type PostData = {
   id: string;
@@ -13,8 +14,6 @@ type PostData = {
   date: string;
   contentHtml: string;
 };
-
-const blueskyUrl = 'https://bsky.app/profile/hiremaga.com';
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: getAllPostIds(),
@@ -34,6 +33,12 @@ export default function Post({ postData }: { postData: PostData }) {
         <meta property="og:title" content={`${postData.title} | ${site.name}`} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={`${site.url}/posts/${postData.id}`} />
+        {site.atprotoDid && (
+          <>
+            <link rel="site.standard.document" href={documentUri(site.atprotoDid, postData.date)} />
+            <link rel="site.standard.publication" href={publicationUri(site.atprotoDid)} />
+          </>
+        )}
       </Head>
 
       {/* The whole article column is capped at the reading measure. */}
@@ -55,7 +60,7 @@ export default function Post({ postData }: { postData: PostData }) {
         <p className="mt-10 border-t border-mist pt-6 font-serif text-base leading-relaxed text-mid">
           Thanks for reading! Want to discuss this post?{' '}
           <a
-            href={blueskyUrl}
+            href={site.bluesky}
             target="_blank"
             rel="noopener noreferrer"
             className="border-b border-link-bd text-teal no-underline transition-colors hover:border-teal"
